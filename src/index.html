@@ -6,9 +6,81 @@
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CAMBIA EL TITLE!!! -->
-    <title>Vite Template</title>
+    <title>R·ESHIPI</title>
   </head>
   <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <img src="assets/images/Recurso 1@4x-8.png" />
+        </div>
+        <div class="submenu">
+          <div class="submenu-item">
+            <input type="text" placeholder="Elige tu tipo de plato" />
+          </div>
+          <div class="submenu-item">
+            <input type="text" placeholder="Elige tu país" />
+          </div>
+          <div class="submenu-item">
+            <input type="text" placeholder="Añade ingredientes" />
+          </div>
+          <div class="submenu-item">
+            <button id="buscar">
+              <img src="assets/images/searcher.png" class="searcher" />
+            </button>
+          </div>
+        </div>
+        <div class="user-actions">
+          <button class="button">Iniciar sesión</button>
+          <div id="toggle-menu" class="toggle-menu">
+            <img src="assets/images/Hamburger_icon.svg.png" class="hamburger" />
+            <div class="magicbox"></div>
+          </div>
+          <nav id="main-nav" class="main-nav">
+            <ul class="main-menu">
+              <li class="main-menu-item">
+                <a href="#home" class="main-menu-link">Inicio</a>
+              </li>
+              <li class="main-menu-item">
+                <a href="#projects" class="main-menu-link">Recetas</a>
+              </li>
+              <li class="main-menu-item">
+                <a href="#about" class="main-menu-link">Acerca de</a>
+              </li>
+              <li class="main-menu-item">
+                <a href="#contact" class="main-menu-link">Contacto</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Bienvenido a Tu Página de Recetas</h1>
+        <p>Encuentra deliciosas recetas usando los ingredientes que tengas.</p>
+        <form>
+          <input type="text" placeholder="Ingresa tus ingredientes" />
+          <button type="submit">Buscar recetas</button>
+        </form>
+      </section>
+
+      <section class="featured-recipes">
+        <!-- Aquí se podrían mostrar algunas recetas destacadas -->
+        <!-- Cada receta puede tener una imagen, título y descripción -->
+      </section>
+
+      <section class="popular-recipes">
+        <!-- Aquí se podrían mostrar recetas populares con imágenes y títulos -->
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Tu Página de Recetas &copy; 2023 - Todos los derechos reservados</p>
+      <a href="#">Sube tu receta a Reshipi</a>
+    </footer>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
