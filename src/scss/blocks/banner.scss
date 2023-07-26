@@ -1,0 +1,87 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+
+.banner{
+    @include responsive(laptop) {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+
+&__recipes{
+    @include responsive(laptop) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;   
+        height: 200px;
+        gap: 4rem;
+        padding: 2rem;
+    }
+}
+&__recipe{
+    @include responsive(laptop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        gap: 1rem;
+        font-size: 1rem;
+    }
+}
+&__recipe-img {
+    @include responsive(laptop) {
+        max-height: 3rem;
+    }
+}
+}
+
+.banner-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .banner-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .banner-button {   
+    padding: 1rem 3rem;
+    background-color: #ffffff;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 0.3px solid rgb(156, 156, 156);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .banner-button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .banner-options button {
+    display: block;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .banner-options button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos adicionales para el botón de filtro activo */
+  .banner-button.active {
+    font-weight: bold;
+  }

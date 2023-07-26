@@ -58,24 +58,88 @@
         </div>
       </div>
     </header>
-
+    <div class="banner">
+      <div class="banner__recipes">
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 2pescado.png"
+          />
+          <span class="banner__recipe-name">Pescado</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 5carne.png"
+          />
+          <span class="banner__recipe-name">Carne</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 1marisco.png"
+          />
+          <span class="banner__recipe-name">Marisco</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 3fastfood.png"
+          />
+          <span class="banner__recipe-name">Fast Food</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 4italiana.png"
+          />
+          <span class="banner__recipe-name">Italiana</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 8acompañantes.png"
+          />
+          <span class="banner__recipe-name">Acompañantes</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 7reposteria.png"
+          />
+          <span class="banner__recipe-name">Postres</span>
+        </div>
+        <div class="banner__recipe">
+          <img
+            class="banner__recipe-img"
+            src="assets/images/Recurso 6panes.png"
+          />
+          <span class="banner__recipe-name">Panes y masas</span>
+        </div>
+      </div>
+      <div class="banner-dropdown">
+        <button class="banner-button">Filtros</button>
+        <div class="banner-options" hidden>
+          <button class="active" data-filter="all">Todas</button>
+          <button data-filter="popular">Más populares</button>
+          <button data-filter="reciente">Más recientes</button>
+          <button data-filter="recomendada">Recomendadas</button>
+        </div>
+      </div>
+    </div>
     <main>
       <section class="hero">
-        <h1>Bienvenido a Tu Página de Recetas</h1>
+        <h1>Bienvenido a R·ESHIPI</h1>
         <p>Encuentra deliciosas recetas usando los ingredientes que tengas.</p>
         <form>
           <input type="text" placeholder="Ingresa tus ingredientes" />
           <button type="submit">Buscar recetas</button>
         </form>
       </section>
-
       <section class="featured-recipes">
-        <!-- Aquí se podrían mostrar algunas recetas destacadas -->
-        <!-- Cada receta puede tener una imagen, título y descripción -->
-      </section>
-
-      <section class="popular-recipes">
-        <!-- Aquí se podrían mostrar recetas populares con imágenes y títulos -->
+        <div class="recetas" id="recetas-container">
+          <!-- Aquí se mostrarán las recetas generadas por JavaScript -->
+        </div>
       </section>
     </main>
 
