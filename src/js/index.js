@@ -189,7 +189,7 @@ const filterButtons = document.getElementById("banner-options button");
 const recetas = document.querySelectorAll(".recetas .receta");
 
 const toggleFilterOptions = () => {
-  filterOptions.toggleAttribute("hidden");
+  filterOptions.classList.toggle("hidden");
 };
 
 const handleFilterClick = (event) => {
