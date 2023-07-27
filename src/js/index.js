@@ -183,33 +183,53 @@ const recetasData = [
 
   // filtro botón banner
 
-const filterButton = document.getElementById("banner-button");
-const filterOptions = document.getElementById("banner-options");
-const filterButtons = document.getElementById("banner-options button");
-const recetas = document.querySelectorAll(".recetas .receta");
+  const filterButton = document.getElementById("banner-button");
+  const filterButtons = document.querySelectorAll(".banner-options button");
+  const recetas = document.querySelectorAll(".main__recetas .receta");
+  const bannerOptions = document.querySelector(".banner-options");
 
-const toggleFilterOptions = () => {
-  filterOptions.toggleAttribute("hidden");
-};
+  const toggleFilterOptions = () => {
+    if (bannerOptions.hidden) {
+      bannerOptions.hidden = false;
+    } else {
+      bannerOptions.hidden = true;
+    }
+  };
+  
 
-const handleFilterClick = (event) => {
-  const target = event.target;
-  if (target.tagName !== "BUTTON") return;
-  for (let i = 0; i < filterButtons.length; i++) {
-    const button = filterButtons[i];
-    button.classList.toggle("active", button === target);
-  }
-  target.classList.add("active");
+  const handleFilterClick = (event) => {
+    const filtro = event.target.dataset.filter;
+    if (event.target.tagName !== "BUTTON") return;
+    for (let i = 0; i < filterButtons.length; i++) {
+      const button = filterButtons[i];
+      button.classList.toggle("active", button === event.target);
+    }
 
-  const filtro = target.getAttribute("data-filter");
-  for (let i = 0; i < recetas.length; i++) {
-    const receta = recetas[i];
-    const showRecipe = filtro === "all" || receta.classList.contains(filtro);
-    receta.classList.toggle("hide", !showRecipe);
-  }
-  filterOptions.classList.add("hidden");
-};
+    for (let i = 0; i < recetas.length; i++) {
+      const receta = recetas[i];
+      const showRecipe = filtro === "all" || receta.classList.contains(filtro);
+      receta.classList.toggle("hide", !showRecipe);
+    }
+
+    if (filtro === "popular") {
+      for (let i = 0; i < recetas.length; i++) {
+        const receta = recetas[i];
+        receta.classList.toggle("hide", i >= 8);
+      }
+    } else if (filtro === "recent") {
+      for (let i = 0; i < recetas.length; i++) {
+        const receta = recetas[i];
+        receta.classList.toggle("hide", i < 8 || i >= 16);
+      }
+    } else if (filtro === "recommended") {
+      for (let i = 0; i < recetas.length; i++) {
+        const receta = recetas[i];
+        receta.classList.toggle("hide", i < 16);
+      }
+    }
+  };
+
 
 filterButton.addEventListener("click", toggleFilterOptions);
-filterOptions.addEventListener("click", handleFilterClick);
+bannerOptions.addEventListener("click", handleFilterClick);
 
