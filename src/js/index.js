@@ -141,7 +141,8 @@ const recetasData = [
   const mostrarRecetas = (recetas) => {
     const recetasContainer = document.getElementById("recetas-container");
   
-    for (const receta of recetas) {
+    for (let i = 0; i < recetas.length; i++) {
+      const receta = recetas[i];
       const recetaDiv = document.createElement("div");
       recetaDiv.classList.add("receta");
   
