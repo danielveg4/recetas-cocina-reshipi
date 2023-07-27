@@ -189,7 +189,7 @@ const filterButtons = document.getElementById("banner-options button");
 const recetas = document.querySelectorAll(".recetas .receta");
 
 const toggleFilterOptions = () => {
-  filterOptions.classList.toggle("hidden");
+  filterOptions.toggleAttribute("hidden");
 };
 
 const handleFilterClick = (event) => {
@@ -210,8 +210,6 @@ const handleFilterClick = (event) => {
   filterOptions.classList.add("hidden");
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  filterButton.addEventListener("click", toggleFilterOptions);
-  filterOptions.addEventListener("click", handleFilterClick);
-});
+filterButton.addEventListener("click", toggleFilterOptions);
+filterOptions.addEventListener("click", handleFilterClick);
 
