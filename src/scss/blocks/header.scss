@@ -8,6 +8,7 @@
 }
 
 .header {
+  @include responsive(laptop) {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -17,7 +18,9 @@
     z-index: 999;
   }
   
-  .header-container {
+  
+  &__container {
+    @include responsive(laptop) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,42 +28,33 @@
     max-width: 1650px;
     margin: 0 auto;
   }
+}
+
+&__logo img {
+  @include responsive(laptop) {
+  max-height: 40px;
+  margin-right: 10px;
+}
+}
+
+&__logo span {
+  @include responsive(laptop) {
+  font-size: 18px;
+  }
+}
   
-  .toggle-menu {
-    margin-left: 2rem;
-    cursor: pointer;
-    width: 40px;
-  }
 
-
-  .hide {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-    width: 50px;
-    top:2rem;
-  }
-
-  .logo img {
-    max-height: 40px;
-    margin-right: 10px;
-  }
-  
-  .logo span {
-    font-size: 18px;
-  }
-
-  
-  .user-actions a {
+&__user a {
+  @include responsive(laptop) {
     text-decoration: none;
     color: #333;
     font-size: 14px;
     margin-right: 20px;
   }
+}
   
-  .button {
+&__button {
+  @include responsive(laptop) {
     padding: 8px 20px;
     background-color: #ff385c;
     color: #fff;
@@ -70,11 +64,97 @@
     border-radius: 4px;
     cursor: pointer;
   }
+}
   
-.user-actions{
+&__user{
+  @include responsive(laptop) {
     display: flex;
     flex-direction: row;
 }
+}
+
+&__submenu {
+  @include responsive(laptop) {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 1200px;
+  margin: 0 auto;}
+}
+
+&__submenu-item {
+  @include responsive(laptop) {
+  margin-right: 10px;
+}
+}
+
+&__submenu-item input {
+  @include responsive(laptop) {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 32px;
+  outline: none;
+}
+}
+
+&__submenu-item input::placeholder {
+  @include responsive(laptop) {
+  color: #717171;
+}
+}
+
+&__submenu-item button {
+  @include responsive(laptop) {
+  padding: 12px 24px;
+  background-color: #ff385c;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+}
+
+&__submenu-item button i {
+  @include responsive(laptop) {
+  margin-right: 8px;
+}
+}
+
+&__submenu-item button:hover {
+  @include responsive(laptop) {
+  background-color: #ff1c4e;
+}
+}
+}
+
+.searcher {
+  width: 1rem;
+  height: 1rem;
+}
+
+.toggle-menu {
+  margin-left: 2rem;
+  cursor: pointer;
+  width: 40px;
+}
+
+
+.hide {
+  display: none;
+}
+
+.hamburger {
+  display: flex;
+  width: 50px;
+  top:2rem;
+}
+
 
 .main-page{
     @include responsive(laptop) {
@@ -146,53 +226,3 @@
     color: #ff4500;
   }
 
-  .submenu {
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .submenu-item {
-    margin-right: 10px;
-  }
-  
-  .submenu-item input {
-    padding: 12px 16px;
-    font-size: 16px;
-    border: 1px solid #ebebeb;
-    border-radius: 32px;
-    outline: none;
-  }
-  
-  .submenu-item input::placeholder {
-    color: #717171;
-  }
-  
-  .submenu-item button {
-    padding: 12px 24px;
-    background-color: #ff385c;
-    color: #fff;
-    border: none;
-    border-radius: 32px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submenu-item button i {
-    margin-right: 8px;
-  }
-  
-  .submenu-item button:hover {
-    background-color: #ff1c4e;
-  }
-
-  .searcher {
-    width: 1rem;
-    height: 1rem;
-  }

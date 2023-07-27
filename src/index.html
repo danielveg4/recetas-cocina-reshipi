@@ -2,36 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- PON UN FAVICON!!! -->
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CAMBIA EL TITLE!!! -->
-    <title>R·ESHIPI</title>
+    <title>RESHIPI</title>
   </head>
   <body>
     <header class="header">
-      <div class="header-container">
-        <div class="logo">
+      <div class="header__container">
+        <div class="header__logo">
           <img src="assets/images/Recurso 1@4x-8.png" />
         </div>
-        <div class="submenu">
-          <div class="submenu-item">
+        <div class="header__submenu">
+          <div class="header__submenu-item">
             <input type="text" placeholder="Elige tu tipo de plato" />
           </div>
-          <div class="submenu-item">
+          <div class="header__submenu-item">
             <input type="text" placeholder="Elige tu país" />
           </div>
-          <div class="submenu-item">
+          <div class="header__submenu-item">
             <input type="text" placeholder="Añade ingredientes" />
           </div>
-          <div class="submenu-item">
+          <div class="header__submenu-item">
             <button id="buscar">
               <img src="assets/images/searcher.png" class="searcher" />
             </button>
           </div>
         </div>
-        <div class="user-actions">
-          <button class="button">Iniciar sesión</button>
+        <div class="header__user">
+          <button class="header__button">Iniciar sesión</button>
           <div id="toggle-menu" class="toggle-menu">
             <img src="assets/images/Hamburger_icon.svg.png" class="hamburger" />
             <div class="magicbox"></div>
@@ -127,25 +125,23 @@
         </div>
       </div>
     </div>
-    <main>
-      <section class="hero">
-        <h1>Bienvenido a R·ESHIPI</h1>
+    <main class="main">
+      <section class="main__principal">
+        <h1>Bienvenido a RESHIPI</h1>
         <p>Encuentra deliciosas recetas usando los ingredientes que tengas.</p>
         <form>
           <input type="text" placeholder="Ingresa tus ingredientes" />
           <button type="submit">Buscar recetas</button>
         </form>
       </section>
-      <section class="featured-recipes">
-        <div class="recetas" id="recetas-container">
-          <!-- Aquí se mostrarán las recetas generadas por JavaScript -->
+      <section class="main__featured">
+        <div class="main__recetas" id="recetas-container">
+          <!-- Aquí aparecerán las recetas desde javascriptt -->
         </div>
       </section>
     </main>
-
-    <!-- Pie de página -->
     <footer>
-      <p>Tu Página de Recetas &copy; 2023 - Todos los derechos reservados</p>
+      <p>Tu Página de Recetas</p>
       <a href="#">Sube tu receta a Reshipi</a>
     </footer>
     <script type="module" src="./js/index.js"></script>
