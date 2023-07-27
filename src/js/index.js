@@ -6,49 +6,12 @@ import '../scss/styles.scss';
 const toggleMenuElement = document.getElementById('toggle-menu');
 const mainNavElement = document.getElementById('main-nav');
 
-
-function handleClick(){
+const handleClick = () => {
     mainNavElement.classList.toggle('hide');
 }
 
 toggleMenuElement.addEventListener('click', handleClick);
 
-
-// filtro botón banner
-
-document.addEventListener("DOMContentLoaded", function () {
-    const filterButton = document.querySelector(".banner-button");
-    const filterOptions = document.querySelector(".banner-options");
-  
-    filterButton.addEventListener("click", function () {
-      filterOptions.toggleAttribute("hidden");
-    });
-  
-    const filterButtons = document.querySelectorAll(".banner-options button");
-    const recetas = document.querySelectorAll(".recetas .receta");
-  
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        // Mostrar el botón activo y ocultar los demás
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        this.classList.add("active");
-  
-        const filtro = this.getAttribute("data-filter");
-  
-        // Filtrar las recetas según la categoría seleccionada
-        recetas.forEach((receta) => {
-          if (filtro === "all" || receta.classList.contains(filtro)) {
-            receta.classList.remove("hide");
-          } else {
-            receta.classList.add("hide");
-          }
-        });
-  
-        // Ocultar el desplegable después de hacer clic en una opción de filtro
-        filterOptions.setAttribute("hidden", "true");
-      });
-    });
-  });
 
 // recetas con DOM
 
@@ -175,27 +138,79 @@ const recetasData = [
     },
   ];
 
-// función para las recetas
-
-// Función para agregar las recetas al contenedor en el HTML
-function mostrarRecetas(recetas) {
+  const mostrarRecetas = (recetas) => {
     const recetasContainer = document.getElementById("recetas-container");
   
-    recetas.forEach((receta) => {
-      const recetaHTML = `
-        <div class="receta ${receta.dificultad.toLowerCase()}">
-          <img src="${receta.imagen}" alt="${receta.nombre}" class="receta-imagen">
-          <h2 class="receta-nombre">${receta.nombre}</h2>
-          <div class="receta-detalles">
-            <p class="receta-tiempo">${receta.tiempo}</p>
-            <p class="receta-dificultad">${receta.dificultad}</p>
-          </div>
-        </div>
-      `;
-      recetasContainer.insertAdjacentHTML("beforeend", recetaHTML);
-    });
-  }
+    for (const receta of recetas) {
+      const recetaDiv = document.createElement("div");
+      recetaDiv.classList.add("receta");
   
-  // Mostrar las recetas en el contenedor
-  mostrarRecetas(recetasData);
+      const recetaImagen = document.createElement("img");
+      recetaImagen.src = receta.imagen;
+      recetaImagen.alt = receta.nombre;
+      recetaImagen.classList.add("receta-imagen");
+  
+      const recetaNombre = document.createElement("h2");
+      recetaNombre.textContent = receta.nombre;
+      recetaNombre.classList.add("receta-nombre");
+  
+      const recetaDetalles = document.createElement("div");
+      recetaDetalles.classList.add("receta-detalles");
+  
+      const recetaTiempo = document.createElement("p");
+      recetaTiempo.textContent = receta.tiempo;
+      recetaTiempo.classList.add("receta-tiempo");
+  
+      const recetaDificultad = document.createElement("p");
+      recetaDificultad.textContent = receta.dificultad;
+      recetaDificultad.classList.add("receta-dificultad");
+  
+      recetaDetalles.appendChild(recetaTiempo);
+      recetaDetalles.appendChild(recetaDificultad);
+  
+      recetaDiv.appendChild(recetaImagen);
+      recetaDiv.appendChild(recetaNombre);
+      recetaDiv.appendChild(recetaDetalles);
+  
+      recetasContainer.appendChild(recetaDiv);
+    }
+  };
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarRecetas(recetasData);
+  });
+
+  // filtro botón banner
+
+const filterButton = document.getElementById("banner-button");
+const filterOptions = document.getElementById("banner-options");
+const filterButtons = document.getElementById("banner-options button");
+const recetas = document.querySelectorAll(".recetas .receta");
+
+const toggleFilterOptions = () => {
+  filterOptions.toggleAttribute("hidden");
+};
+
+const handleFilterClick = (event) => {
+  const target = event.target;
+  if (target.tagName !== "BUTTON") return;
+  for (let i = 0; i < filterButtons.length; i++) {
+    const button = filterButtons[i];
+    button.classList.toggle("active", button === target);
+  }
+  target.classList.add("active");
+
+  const filtro = target.getAttribute("data-filter");
+  for (let i = 0; i < recetas.length; i++) {
+    const receta = recetas[i];
+    const showRecipe = filtro === "all" || receta.classList.contains(filtro);
+    receta.classList.toggle("hide", !showRecipe);
+  }
+  filterOptions.classList.add("hidden");
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  filterButton.addEventListener("click", toggleFilterOptions);
+  filterOptions.addEventListener("click", handleFilterClick);
+});
 
