@@ -176,9 +176,9 @@ const recetasData = [
     }
   };
   
-  document.addEventListener("DOMContentLoaded", () => {
+
     mostrarRecetas(recetasData);
-  });
+
 
   // filtro botón banner
 
