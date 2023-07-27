@@ -21,24 +21,28 @@ const recetasData = [
       nombre: "Hamburguesa clásica",
       tiempo: "Tiempo: 30 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "fast",
     },
     {
       imagen: "assets/images/receta2.jpg",
       nombre: "Pizza de pepperoni",
       tiempo: "Tiempo: 45 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "italiana",
     },
     {
       imagen: "assets/images/receta3.jpg",
       nombre: "Ensalada César",
       tiempo: "Tiempo: 15 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "acompañante",
     },
     {
       imagen: "assets/images/receta4.jpg",
       nombre: "Tacos de pescado",
       tiempo: "Tiempo: 25 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "pescado",
     },
     {
       imagen: "assets/images/receta5.jpg",
@@ -138,9 +142,13 @@ const recetasData = [
     },
   ];
 
+  let allRecetas = [...recetasData];
+  let recetasFiltradas = [...recetasData];
+
   const mostrarRecetas = (recetas) => {
     const recetasContainer = document.getElementById("recetas-container");
-  
+    recetasContainer.innerHTML = "";
+
     for (let i = 0; i < recetas.length; i++) {
       const receta = recetas[i];
       const recetaDiv = document.createElement("div");
@@ -177,8 +185,8 @@ const recetasData = [
     }
   };
   
-
-    mostrarRecetas(recetasData);
+  mostrarRecetas(allRecetas);
+  
 
 
   // filtro botón banner
@@ -189,46 +197,53 @@ const recetasData = [
   const bannerOptions = document.querySelector(".banner-options");
 
   const toggleFilterOptions = () => {
-    if (bannerOptions.hidden) {
-      bannerOptions.hidden = false;
-    } else {
-      bannerOptions.hidden = true;
-    }
+    bannerOptions.hidden = !bannerOptions.hidden;
   };
   
 
   const handleFilterClick = (event) => {
     const filtro = event.target.dataset.filter;
     if (event.target.tagName !== "BUTTON") return;
+  
     for (let i = 0; i < filterButtons.length; i++) {
       const button = filterButtons[i];
       button.classList.toggle("active", button === event.target);
     }
-
+    
+  
     for (let i = 0; i < recetas.length; i++) {
-      const receta = recetas[i];
-      const showRecipe = filtro === "all" || receta.classList.contains(filtro);
-      receta.classList.toggle("hide", !showRecipe);
+      recetas[i].classList.remove("hide");
     }
-
-    if (filtro === "popular") {
-      for (let i = 0; i < recetas.length; i++) {
-        const receta = recetas[i];
-        receta.classList.toggle("hide", i >= 8);
+  
+    if (filtro === "all") {
+      mostrarRecetas(allRecetas);
+    } else if (filtro === "popular") {
+      for (let i = 8; i < recetas.length; i++) {
+        recetas[i].classList.add("hide");
       }
     } else if (filtro === "recent") {
-      for (let i = 0; i < recetas.length; i++) {
-        const receta = recetas[i];
-        receta.classList.toggle("hide", i < 8 || i >= 16);
+      for (let i = 0; i < 8 || i >= 16; i++) {
+        recetas[i].classList.add("hide");
       }
     } else if (filtro === "recommended") {
-      for (let i = 0; i < recetas.length; i++) {
-        const receta = recetas[i];
-        receta.classList.toggle("hide", i < 16);
+      for (let i = 0; i < 16; i++) {
+        recetas[i].classList.add("hide");
       }
     }
   };
 
+
+// botones iconos banner: al pulsar en uno de ellos tiene que mostrarte las recetas que estén hechas con eso.
+
+const pescadoIcon = document.getElementById("recipe-pescado");
+
+pescadoIcon.addEventListener("click", () => {
+  const recetasDePescado = recetasData.filter((receta) => receta.tipo === "pescado");
+  mostrarRecetas(recetasDePescado);
+});
+
+
+// listeners filtro
 
 filterButton.addEventListener("click", toggleFilterOptions);
 bannerOptions.addEventListener("click", handleFilterClick);
