@@ -7,13 +7,31 @@
   box-sizing: border-box;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  footer p {
-    font-size: 14px;
-  }
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 3rem;
+  padding-top: 1.5rem;
+
+&__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+&__menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+&__menu li {
+  margin-bottom: 0.5rem;
+}
+}
+
+.social-icon {
+  color: white;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
