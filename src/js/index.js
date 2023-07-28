@@ -254,32 +254,38 @@ const recetasData = [
 
 // botones iconos banner: al pulsar en uno de ellos tiene que mostrarte las recetas que estén hechas con eso.
 
-const pescadoIcon = document.getElementById("recipe-pescado");
-const carneIcon = document.getElementById("recipe-carne");
-const mariscoIcon = document.getElementById("recipe-marisco");
-const fastfoodIcon = document.getElementById("recipe-fastfood");
-const italianaIcon = document.getElementById("recipe-italiana");
-const acompaIcon = document.getElementById("recipe-acompa");
-const postresIcon = document.getElementById("recipe-reposteria");
-const panesIcon = document.getElementById("recipe-panes");
+const recipesContainer = document.getElementById("recipes-container");
 
+const encuentrameAlHijo = (element, className) => {
+  while (element && !element.classList.contains(className)) {
+    element = element.parentElement;
+  }
+  return element;
+};
 
 const handleIconClick = (tipo) => {
   const recetasFiltradas = recetasData.filter((receta) => receta.tipo === tipo);
   mostrarRecetas(recetasFiltradas);
 };
 
-pescadoIcon.addEventListener("click", () => handleIconClick("pescado"));
-carneIcon.addEventListener("click", () => handleIconClick("carne"));
-mariscoIcon.addEventListener("click", () => handleIconClick("marisco"));
-fastfoodIcon.addEventListener("click", () => handleIconClick("fast"));
-italianaIcon.addEventListener("click", () => handleIconClick("italiana"));
-acompaIcon.addEventListener("click", () => handleIconClick("acompañante"));
-postresIcon.addEventListener("click", () => handleIconClick("postres"));
-panesIcon.addEventListener("click", () => handleIconClick("panes y masas"));
+recipesContainer.addEventListener("click", (event) => {
+  const clickedRecipe = encuentrameAlHijo(event.target, "banner__recipe");
+  if (!clickedRecipe) return;
+
+  const tipo = clickedRecipe.dataset.tipo;
+  handleIconClick(tipo);
+});
+
+// poner al padre el click y usar e.event.target
+
 
 // listeners filtro
 
 filterButton.addEventListener("click", toggleFilterOptions);
 bannerOptions.addEventListener("click", handleFilterClick);
 
+
+// hacer un filtro para pais, tipo de plato... tipos, select y options
+// utilizar el select para que se despliegue, con un evento de change, que es con lo que filtras
+
+// firebase para el inicio de sesión -> investigar iniciar sesion, crear recetas, etc
