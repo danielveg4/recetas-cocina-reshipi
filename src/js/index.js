@@ -49,96 +49,112 @@ const recetasData = [
       nombre: "Sopa de tomate",
       tiempo: "Tiempo: 40 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "acompañante",
     },
     {
       imagen: "assets/images/receta6.jpg",
       nombre: "Lasaña de carne",
       tiempo: "Tiempo: 1 hora",
       dificultad: "Dificultad: Moderada",
+      tipo: "carne",
     },
     {
       imagen: "assets/images/receta7.jpg",
       nombre: "Sushi de salmón",
       tiempo: "Tiempo: 50 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "pescado",
     },
     {
       imagen: "assets/images/receta8.jpg",
       nombre: "Pollo a la parrilla",
       tiempo: "Tiempo: 35 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "carne",
     },
     {
       imagen: "assets/images/receta9.jpg",
       nombre: "Tarta de manzana",
       tiempo: "Tiempo: 1 hora",
       dificultad: "Dificultad: Moderada",
+      tipo: "postres",
     },
     {
       imagen: "assets/images/receta10.jpg",
       nombre: "Pasta Alfredo",
       tiempo: "Tiempo: 25 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "italiana",
     },
     {
       imagen: "assets/images/receta11.jpg",
       nombre: "Enchiladas de pollo",
       tiempo: "Tiempo: 45 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "carne",
     },
     {
       imagen: "assets/images/receta12.jpg",
       nombre: "Pastel de chocolate",
       tiempo: "Tiempo: 1 hora",
       dificultad: "Dificultad: Moderada",
+      tipo: "postres,"
     },
     {
       imagen: "assets/images/receta13.jpg",
       nombre: "Sopa de fideos",
       tiempo: "Tiempo: 30 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "acompañantes",
     },
     {
       imagen: "assets/images/receta14.jpg",
       nombre: "Alitas de pollo",
       tiempo: "Tiempo: 40 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "carne",
     },
     {
       imagen: "assets/images/receta15.jpg",
       nombre: "Risotto de champiñones",
       tiempo: "Tiempo: 50 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "acompañantes",
     },
     {
       imagen: "assets/images/receta16.jpg",
       nombre: "Ensalada de quinoa",
       tiempo: "Tiempo: 20 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "acompañantes",
     },
     {
       imagen: "assets/images/receta17.jpg",
       nombre: "Tacos al pastor",
       tiempo: "Tiempo: 35 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "acompañantes",
     },
     {
       imagen: "assets/images/receta18.jpg",
       nombre: "Pastel de zanahoria",
       tiempo: "Tiempo: 1 hora",
       dificultad: "Dificultad: Moderada",
+      tipo: "postres",
     },
     {
       imagen: "assets/images/receta19.jpg",
       nombre: "Ramen",
       tiempo: "Tiempo: 40 minutos",
       dificultad: "Dificultad: Moderada",
+      tipo: "acompañantes",
     },
     {
       imagen: "assets/images/receta20.jpg",
       nombre: "Ceviche de camarón",
       tiempo: "Tiempo: 25 minutos",
       dificultad: "Dificultad: Fácil",
+      tipo: "pescado",
     },
   ];
 
@@ -204,17 +220,18 @@ const recetasData = [
   const handleFilterClick = (event) => {
     const filtro = event.target.dataset.filter;
     if (event.target.tagName !== "BUTTON") return;
-  
     for (let i = 0; i < filterButtons.length; i++) {
-      const button = filterButtons[i];
-      button.classList.toggle("active", button === event.target);
+      filterButtons[i].classList.remove("active");
     }
-    
-  
+    event.target.classList.add("active");
     for (let i = 0; i < recetas.length; i++) {
       recetas[i].classList.remove("hide");
     }
   
+    filterRecetas(filtro);
+  };
+
+  const filterRecetas = (filtro) => {
     if (filtro === "all") {
       mostrarRecetas(allRecetas);
     } else if (filtro === "popular") {
@@ -222,8 +239,10 @@ const recetasData = [
         recetas[i].classList.add("hide");
       }
     } else if (filtro === "recent") {
-      for (let i = 0; i < 8 || i >= 16; i++) {
-        recetas[i].classList.add("hide");
+      for (let i = 0; i < recetas.length; i++) {
+        if (i < 8 || i >= 16) {
+          recetas[i].classList.add("hide");
+        }
       }
     } else if (filtro === "recommended") {
       for (let i = 0; i < 16; i++) {
@@ -236,12 +255,28 @@ const recetasData = [
 // botones iconos banner: al pulsar en uno de ellos tiene que mostrarte las recetas que estén hechas con eso.
 
 const pescadoIcon = document.getElementById("recipe-pescado");
+const carneIcon = document.getElementById("recipe-carne");
+const mariscoIcon = document.getElementById("recipe-marisco");
+const fastfoodIcon = document.getElementById("recipe-fastfood");
+const italianaIcon = document.getElementById("recipe-italiana");
+const acompaIcon = document.getElementById("recipe-acompa");
+const postresIcon = document.getElementById("recipe-reposteria");
+const panesIcon = document.getElementById("recipe-panes");
 
-pescadoIcon.addEventListener("click", () => {
-  const recetasDePescado = recetasData.filter((receta) => receta.tipo === "pescado");
-  mostrarRecetas(recetasDePescado);
-});
 
+const handleIconClick = (tipo) => {
+  const recetasFiltradas = recetasData.filter((receta) => receta.tipo === tipo);
+  mostrarRecetas(recetasFiltradas);
+};
+
+pescadoIcon.addEventListener("click", () => handleIconClick("pescado"));
+carneIcon.addEventListener("click", () => handleIconClick("carne"));
+mariscoIcon.addEventListener("click", () => handleIconClick("marisco"));
+fastfoodIcon.addEventListener("click", () => handleIconClick("fast"));
+italianaIcon.addEventListener("click", () => handleIconClick("italiana"));
+acompaIcon.addEventListener("click", () => handleIconClick("acompañante"));
+postresIcon.addEventListener("click", () => handleIconClick("postres"));
+panesIcon.addEventListener("click", () => handleIconClick("panes y masas"));
 
 // listeners filtro
 
