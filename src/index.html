@@ -14,13 +14,36 @@
         </div>
         <div class="header__submenu">
           <div class="header__submenu-item">
-            <input type="text" placeholder="Elige tu tipo de plato" />
+            <select id="selectTipo">
+              <option value="all">Elige tu tipo de plato</option>
+              <option value="fast">Rápido</option>
+              <option value="italiana">Italiana</option>
+              <option value="acompañante">Acompañante</option>
+              <option value="pescado">Pescado</option>
+              <option value="carne">Carne</option>
+              <option value="postres">Postres</option>
+            </select>
           </div>
           <div class="header__submenu-item">
-            <input type="text" placeholder="Elige tu país" />
+            <select id="selectPais">
+              <option value="all">Elige tu país</option>
+              <option value="EE. UU.">EE. UU.</option>
+              <option value="Italia">Italia</option>
+              <option value="México">México</option>
+              <option value="Japón">Japón</option>
+              <option value="Francia">Francia</option>
+              <option value="España">España</option>
+            </select>
           </div>
           <div class="header__submenu-item">
-            <input type="text" placeholder="Elige tu tiempo de preparación" />
+            <select id="selectDuracion">
+              <option value="all">Elige tu tiempo de preparación</option>
+              <option value="15">Menos de 15 minutos</option>
+              <option value="30">Entre 15 y 30 minutos</option>
+              <option value="45">Entre 30 y 45 minutos</option>
+              <option value="60">Entre 45 y 60 minutos</option>
+              <option value="60+">Más de 60 minutos</option>
+            </select>
           </div>
           <div class="header__submenu-item">
             <button id="buscar">

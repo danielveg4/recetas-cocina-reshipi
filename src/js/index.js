@@ -23,6 +23,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "fast",
     país: "EE. UU.",
+    duracion: 30,
   },
   {
     imagen: "assets/images/receta2.jpg",
@@ -31,6 +32,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "italiana",
     país: "Italia",
+    duracion: 45,
   },
   {
     imagen: "assets/images/receta3.jpg",
@@ -39,6 +41,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañante",
     país: "Francia",
+    duracion: 15,
   },
   {
     imagen: "assets/images/receta4.jpg",
@@ -47,6 +50,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "pescado",
     país: "México",
+    duracion: 25,
   },
   {
     imagen: "assets/images/receta5.jpg",
@@ -55,6 +59,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañante",
     país: "Italia",
+    duracion: 40,
   },
   {
     imagen: "assets/images/receta6.jpg",
@@ -63,6 +68,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "carne",
     país: "Italia",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta7.jpg",
@@ -71,6 +77,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "pescado",
     país: "Japón",
+    duracion: 50,
   },
   {
     imagen: "assets/images/receta8.jpg",
@@ -79,14 +86,16 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "carne",
     país: "España",
+    duracion: 35,
   },
   {
     imagen: "assets/images/receta9.jpg",
     nombre: "Tarta de manzana",
-    tiempo: "Tiempo: 1 hora",
+    tiempo: "Tiempo: 1 hora y media",
     dificultad: "Dificultad: Moderada",
     tipo: "postres",
     país: "Francia",
+    duracion: 90,
   },
   {
     imagen: "assets/images/receta10.jpg",
@@ -95,6 +104,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "italiana",
     país: "Italia",
+    duracion: 25,
   },
   {
     imagen: "assets/images/receta11.jpg",
@@ -103,6 +113,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "carne",
     país: "México",
+    duracion: 45,
   },
   {
     imagen: "assets/images/receta12.jpg",
@@ -111,6 +122,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "postres",
     país: "Francia",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta13.jpg",
@@ -119,6 +131,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañantes",
     país: "China",
+    duracion: 30,
   },
   {
     imagen: "assets/images/receta14.jpg",
@@ -127,6 +140,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "carne",
     país: "España",
+    duracion: 40,
   },
   {
     imagen: "assets/images/receta15.jpg",
@@ -135,6 +149,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "acompañantes",
     país: "Italia",
+    duracion: 50,
   },
   {
     imagen: "assets/images/receta16.jpg",
@@ -143,6 +158,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañantes",
     país: "Perú",
+    duracion: 20,
   },
   {
     imagen: "assets/images/receta17.jpg",
@@ -151,6 +167,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "acompañantes",
     país: "México",
+    duracion: 35,
   },
   {
     imagen: "assets/images/receta18.jpg",
@@ -159,6 +176,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "postres",
     país: "Inglaterra",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta19.jpg",
@@ -167,6 +185,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "acompañantes",
     país: "Japón",
+    duracion: 40,
   },
   {
     imagen: "assets/images/receta20.jpg",
@@ -175,6 +194,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "pescado",
     país: "Perú",
+    duracion: 25,
   },
   {
     imagen: "assets/images/receta21.jpg",
@@ -183,6 +203,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "plato principal",
     país: "España",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta22.jpg",
@@ -191,6 +212,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "pescado",
     país: "EE. UU.",
+    duracion: 40,
   },
   {
     imagen: "assets/images/receta23.jpg",
@@ -199,6 +221,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "acompañantes",
     país: "México",
+    duracion: 35,
   },
   {
     imagen: "assets/images/receta24.jpg",
@@ -207,6 +230,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "pescado",
     país: "Japón",
+    duracion: 50,
   },
   {
     imagen: "assets/images/receta25.jpg",
@@ -215,6 +239,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañante",
     país: "España",
+    duracion: 35,
   },
   {
     imagen: "assets/images/receta26.jpg",
@@ -223,6 +248,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "aperitivo",
     país: "India",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta27.jpg",
@@ -231,6 +257,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "acompañante",
     país: "Francia",
+    duracion: 30,
   },
   {
     imagen: "assets/images/receta28.jpg",
@@ -239,6 +266,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "panes",
     país: "Francia",
+    duracion: 120,
   },
   {
     imagen: "assets/images/receta29.jpg",
@@ -247,6 +275,7 @@ const recetasData = [
     dificultad: "Dificultad: Fácil",
     tipo: "panes",
     país: "España",
+    duracion: 60,
   },
   {
     imagen: "assets/images/receta30.jpg",
@@ -255,6 +284,7 @@ const recetasData = [
     dificultad: "Dificultad: Moderada",
     tipo: "marisco",
     país: "España",
+    duracion: 60,
   },
 ];
 
@@ -385,7 +415,38 @@ filterButton.addEventListener("click", toggleFilterOptions);
 bannerOptions.addEventListener("click", handleFilterClick);
 
 
-// hacer un filtro para pais, tipo de plato... tipos, select y options
-// utilizar el select para que se despliegue, con un evento de change, que es con lo que filtras
+// hacer un filtro para pais, tipo de plato... tipos, select y options. utilizar el select para que se despliegue, con un evento de change, que es con lo que filtras
 
-// firebase para el inicio de sesión -> investigar iniciar sesion, crear recetas, etc
+const selectTipo = document.getElementById("selectTipo");
+const selectPais = document.getElementById("selectPais");
+const selectDuracion = document.getElementById("selectDuracion");
+const buscarButton = document.getElementById("buscar");
+
+const buscadorRecetas = () => {
+  const tipoSeleccionado = selectTipo.value;
+  const paisSeleccionado = selectPais.value;
+  const duracionSeleccionada = selectDuracion.value;
+
+  for (let i = 0; i < recetas.length; i++) {
+    const receta = recetasData[i];
+    const tipoReceta = receta.tipo;
+    const paisReceta = receta.país;
+    const duracionReceta = receta.duracion;
+
+    const tipoCumple = tipoSeleccionado === "all" || tipoSeleccionado === tipoReceta;
+    const paisCumple = paisSeleccionado === "all" || paisSeleccionado === paisReceta;
+    const duracionCumple =
+      duracionSeleccionada === "all" ||
+      (duracionSeleccionada === "60+" && duracionReceta >= 60) ||
+      (duracionReceta >= parseInt(duracionSeleccionada, 10) &&
+        duracionReceta < parseInt(duracionSeleccionada, 10) + 15);
+
+    if (tipoCumple && paisCumple && duracionCumple) {
+      recetas[i].classList.remove("hide");
+    } else {
+      recetas[i].classList.add("hide");
+    }
+  }
+};
+
+buscarButton.addEventListener("click", buscadorRecetas);
