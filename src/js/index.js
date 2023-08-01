@@ -24,6 +24,7 @@ const recetasData = [
     tipo: "fast",
     país: "EE. UU.",
     duracion: 30,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta2.jpg",
@@ -33,6 +34,7 @@ const recetasData = [
     tipo: "italiana",
     país: "Italia",
     duracion: 45,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta3.jpg",
@@ -42,6 +44,7 @@ const recetasData = [
     tipo: "acompañante",
     país: "Francia",
     duracion: 15,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta4.jpg",
@@ -51,6 +54,7 @@ const recetasData = [
     tipo: "pescado",
     país: "México",
     duracion: 25,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta5.jpg",
@@ -60,6 +64,7 @@ const recetasData = [
     tipo: "acompañante",
     país: "Italia",
     duracion: 40,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta6.jpg",
@@ -69,6 +74,7 @@ const recetasData = [
     tipo: "carne",
     país: "Italia",
     duracion: 60,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta7.jpg",
@@ -78,6 +84,7 @@ const recetasData = [
     tipo: "pescado",
     país: "Japón",
     duracion: 50,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta8.jpg",
@@ -87,6 +94,7 @@ const recetasData = [
     tipo: "carne",
     país: "España",
     duracion: 35,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta9.jpg",
@@ -96,6 +104,7 @@ const recetasData = [
     tipo: "postres",
     país: "Francia",
     duracion: 90,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta10.jpg",
@@ -105,6 +114,7 @@ const recetasData = [
     tipo: "italiana",
     país: "Italia",
     duracion: 25,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta11.jpg",
@@ -114,6 +124,7 @@ const recetasData = [
     tipo: "carne",
     país: "México",
     duracion: 45,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta12.jpg",
@@ -123,6 +134,7 @@ const recetasData = [
     tipo: "postres",
     país: "Francia",
     duracion: 60,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta13.jpg",
@@ -132,6 +144,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "China",
     duracion: 30,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta14.jpg",
@@ -141,6 +154,7 @@ const recetasData = [
     tipo: "carne",
     país: "España",
     duracion: 40,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta15.jpg",
@@ -150,6 +164,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "Italia",
     duracion: 50,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta16.jpg",
@@ -159,6 +174,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "Perú",
     duracion: 20,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta17.jpg",
@@ -168,6 +184,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "México",
     duracion: 35,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta18.jpg",
@@ -177,6 +194,7 @@ const recetasData = [
     tipo: "postres",
     país: "Inglaterra",
     duracion: 60,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta19.jpg",
@@ -186,6 +204,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "Japón",
     duracion: 40,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta20.jpg",
@@ -195,6 +214,7 @@ const recetasData = [
     tipo: "pescado",
     país: "Perú",
     duracion: 25,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta21.jpg",
@@ -204,6 +224,7 @@ const recetasData = [
     tipo: "plato principal",
     país: "España",
     duracion: 60,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta22.jpg",
@@ -213,6 +234,7 @@ const recetasData = [
     tipo: "pescado",
     país: "EE. UU.",
     duracion: 40,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta23.jpg",
@@ -222,6 +244,7 @@ const recetasData = [
     tipo: "acompañantes",
     país: "México",
     duracion: 35,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta24.jpg",
@@ -231,6 +254,7 @@ const recetasData = [
     tipo: "pescado",
     país: "Japón",
     duracion: 50,
+    valoración: "populares",
   },
   {
     imagen: "assets/images/receta25.jpg",
@@ -240,6 +264,7 @@ const recetasData = [
     tipo: "acompañante",
     país: "España",
     duracion: 35,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta26.jpg",
@@ -249,6 +274,7 @@ const recetasData = [
     tipo: "aperitivo",
     país: "India",
     duracion: 60,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta27.jpg",
@@ -258,6 +284,7 @@ const recetasData = [
     tipo: "acompañante",
     país: "Francia",
     duracion: 30,
+    valoración: "recomendadas",
   },
   {
     imagen: "assets/images/receta28.jpg",
@@ -267,6 +294,7 @@ const recetasData = [
     tipo: "panes",
     país: "Francia",
     duracion: 120,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta29.jpg",
@@ -276,6 +304,7 @@ const recetasData = [
     tipo: "panes",
     país: "España",
     duracion: 60,
+    valoración: "reciente",
   },
   {
     imagen: "assets/images/receta30.jpg",
@@ -285,6 +314,7 @@ const recetasData = [
     tipo: "marisco",
     país: "España",
     duracion: 60,
+    valoración: "populares",
   },
 ];
 
@@ -362,24 +392,24 @@ const recetasData = [
   };
 
   const filterRecetas = (filtro) => {
-    if (filtro === "all") {
-      mostrarRecetas(allRecetas);
-    } else if (filtro === "popular") {
-      for (let i = 8; i < recetas.length; i++) {
-        recetas[i].classList.add("hide");
-      }
-    } else if (filtro === "recent") {
-      for (let i = 0; i < recetas.length; i++) {
-        if (i < 8 || i >= 16) {
-          recetas[i].classList.add("hide");
-        }
-      }
-    } else if (filtro === "recommended") {
-      for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < recetas.length; i++) {
+      const receta = recetasData[i];
+  
+      const cumpleFiltro =
+        filtro === "all" ||
+        (filtro === "popular" && receta.valoración === "populares") ||
+        (filtro === "recent" && receta.valoración === "reciente") ||
+        (filtro === "recommended" && receta.valoración === "recomendadas");
+  
+      if (cumpleFiltro) {
+        recetas[i].classList.remove("hide");
+      } else {
         recetas[i].classList.add("hide");
       }
     }
   };
+  
+
 
 
 // botones iconos banner: al pulsar en uno de ellos tiene que mostrarte las recetas que estén hechas con eso.
@@ -412,7 +442,10 @@ recipesContainer.addEventListener("click", (event) => {
 // listeners filtro
 
 filterButton.addEventListener("click", toggleFilterOptions);
-bannerOptions.addEventListener("click", handleFilterClick);
+
+for (let i = 0; i < filterButtons.length; i++) {
+  filterButtons[i].addEventListener("click", handleFilterClick);
+}
 
 
 // hacer un filtro para pais, tipo de plato... tipos, select y options. utilizar el select para que se despliegue, con un evento de change, que es con lo que filtras
