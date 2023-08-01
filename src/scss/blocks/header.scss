@@ -91,7 +91,7 @@
 }
 }
 
-&__submenu-item input {
+&__submenu-item2 {
   @include responsive(laptop) {
   padding: 12px 16px;
   font-size: 16px;
@@ -119,6 +119,7 @@
   transition: background-color 0.3s ease;
 }
 }
+
 
 &__submenu-item button i {
   @include responsive(laptop) {

@@ -408,8 +408,6 @@ const recetasData = [
       }
     }
   };
-  
-
 
 
 // botones iconos banner: al pulsar en uno de ellos tiene que mostrarte las recetas que estén hechas con eso.
