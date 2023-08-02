@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RESHIPI</title>
@@ -53,7 +57,13 @@
           </div>
         </div>
         <div class="header__user">
-          <button class="header__button">Iniciar sesión</button>
+          <button
+            class="header__button"
+            data-bs-toggle="modal"
+            data-bs-target="#inicioSesion"
+          >
+            Iniciar sesión
+          </button>
           <div id="toggle-menu" class="toggle-menu">
             <img src="assets/images/Hamburger_icon.svg.png" class="hamburger" />
             <div class="magicbox"></div>
@@ -199,6 +209,59 @@
       </div>
     </footer>
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="inicioSesion"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title-white" id="exampleModalLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="login-form">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Email"
+                required
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="*****"
+                required
+              />
+              <button>Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
