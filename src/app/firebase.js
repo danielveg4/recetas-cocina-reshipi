@@ -6,6 +6,7 @@
 
   // https://firebase.google.com/docs/web/setup#available-libraries
 
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"
 
   // Your web app's Firebase configuration
 
@@ -30,3 +31,4 @@
 
   export const app = initializeApp(firebaseConfig);
   console.log(app);
+  export const auth = getAuth(app);
