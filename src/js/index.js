@@ -37,6 +37,10 @@ const loginCheck = user => {
 //  loginCheck(user)
 // });
 
+// login
+
+import '../app/singIn.js';
+
 
 // botón menu
 
