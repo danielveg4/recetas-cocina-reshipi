@@ -8,8 +8,9 @@ import { auth } from './firebase.js'
 //  const email = signInForm['login-email'].value;
 //  const password = signInForm['login-password'].value;
 //
-//try {
-//  const credentials = await signInWithEmailAndPassword(auth, email, password)
+//  try {
+//  const credentials = await signInWithEmailAndPassword(auth, email, password);
+// const modal = bootstrap.Modal.getInstance(document.getElementById(''))
 // } catch (error) {
 //    console.log(error);
 // }
