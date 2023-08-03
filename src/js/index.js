@@ -7,6 +7,36 @@ import '../app/singupForm.js';
 // El styles lo importamos aquí, ya se carga después al compilar todo
 import '../scss/styles.scss';
 
+// logout
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"
+import  { auth } from '../app/firebase.js'
+
+const loginLink = document.getElementById('iniciarSesion');
+const logout = document.getElementById('logout');
+
+import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"
+
+
+logout.addEventListener('click', async () => {
+  await signOut(auth);
+  console.log('user sign out');
+})
+
+const loginCheck = user => {
+  if (user) {
+    loginLink.forEach(link => link.style.display = 'block');
+    logout.forEach(link => link.style.display = 'none');
+  } else { 
+    loginLink.forEach(link => link.style.display = 'none');
+    logout.forEach(link => link.style.display = 'block');
+  }
+}
+
+//onAuthStateChanged(auth, async (user) => {
+//  loginCheck(user)
+// });
+
 
 // botón menu
 

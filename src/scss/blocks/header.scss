@@ -65,6 +65,13 @@
     cursor: pointer;
   }
 }
+
+&__button-logout{
+  @include responsive(laptop) {
+    display: none;
+  }
+
+}
   
 &__user{
   @include responsive(laptop) {
