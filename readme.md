@@ -4,7 +4,7 @@
 
 ## Ejemplo en vivo
 
-- [URL-de-github-pages-de-este-proyecto](https://danielveg4.github.io/reshipi/)
+- [URL de github pages de este proyecto](https://danielveg4.github.io/reshipi/)
 
 ## Descripción 📑
 
